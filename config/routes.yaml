@@ -6,4 +6,34 @@ app_home:
   path: /
   controller: App\Controller\HomeController::home
 
+app_show:
+  path: /article/{slug}
+  controller: App\Controller\HomeController::show
 
+app_about:
+  path: /about
+  controller: App\Controller\AboutController::about
+
+app_contact:
+  path: /contact
+  controller: App\Controller\ContactController::contact
+
+app_list:
+  path: /backoffice/article/list
+  controller: App\Controller\BackController::list
+
+app_create:
+  path: /backoffice/article/create
+  controller: App\Controller\BackController::create
+
+app_edit:
+  path: /backoffice/article/edit
+  controller: App\Controller\BackController::edit
+
+app_delete:
+  path: /backoffice/article/delete
+  controller: App\Controller\BackController::delete
+
+app_listarticle:
+  path: /listarticle
+  controller: App\Controller\ArticleListController::listarticle
