@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="/css/bootstrap.min.css">
+        {% block css %}{% endblock %}
     </head>
     <body>
         {% block navbar %}
@@ -27,6 +27,27 @@
                 </div>
             </nav>
         {% endblock %}
+
+        {% for type, messages in app.flashes %}
+            {% for message in messages %}
+                {% block flashes %}
+                    <div class="container">
+                        <br>
+                        <div class="alert alert-{{ type }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                {% endblock %}
+            {%  endfor %}
+        {% endfor %}
+
+
+
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
         <script src="/js/jquery-3.3.1.min.js"></script>

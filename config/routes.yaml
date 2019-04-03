@@ -27,11 +27,11 @@ app_create:
   controller: App\Controller\BackController::create
 
 app_edit:
-  path: /backoffice/article/edit
+  path: /backoffice/article/{slug}/edit
   controller: App\Controller\BackController::edit
 
 app_delete:
-  path: /backoffice/article/delete
+  path: /backoffice/article/{slug}/delete
   controller: App\Controller\BackController::delete
 
 app_listarticle:

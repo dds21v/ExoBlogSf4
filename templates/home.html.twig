@@ -1,9 +1,18 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link rel="stylesheet" href="/css/homepage.css">
+{% endblock %}
+
 {% block body %}
 <h1>Bonjour!</h1>
 {% endblock %}
 
-{% block title %}
 
-{% endblock %}
+
 

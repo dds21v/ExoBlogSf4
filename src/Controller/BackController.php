@@ -3,7 +3,6 @@
 
 namespace App\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -22,6 +21,7 @@ class BackController extends AbstractController
      */
     public function create(): Response
     {
+        $this->addFlash('success', 'Votre article a été créé');
         return $this->render('backoffice/article/create.html.twig');
     }
 
@@ -30,6 +30,7 @@ class BackController extends AbstractController
      */
     public function edit(): Response
     {
+        $this->addFlash('info', 'Votre article a été modifié');
         return $this->render('backoffice/article/edit.html.twig');
     }
 
@@ -38,7 +39,7 @@ class BackController extends AbstractController
      */
     public function delete(): Response
     {
+        $this->addFlash('danger', 'Votre article a été supprimé');
         return $this->render('backoffice/article/delete.html.twig');
     }
 }
-
